@@ -13,6 +13,9 @@ import { PasswordValidationService } from './password-validation.service';
 import { AuthTokenService } from './auth-token.service';
 import { MfaService } from './mfa.service';
 import { SessionManagementService } from './session-management.service';
+// Use AuditLogService (tamper-evident) consistently for all auth audit events.
+// This replaces the previous duplicate AuditService + AuditLogService pattern,
+// ensuring each event is logged exactly once with a consistent interface.
 import { AuditLogService } from '../../common/services/audit-log.service';
 import { RegisterDto, LoginDto, ChangePasswordDto } from '../dto/auth.dto';
 
